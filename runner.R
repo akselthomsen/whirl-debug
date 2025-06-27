@@ -1,0 +1,18 @@
+
+x <- whirl::run("mtcars.R")
+
+cat("\n------ Checks --------\n")
+
+stopifnot(x$status == "success")
+
+x$result[[1]]$logs |> 
+    file.exists() |> 
+    stopifnot()
+
+cat("\n------ Queue --------\n")
+
+print(x)
+
+cat("\n------ Result --------\n")
+
+str(x$result)
