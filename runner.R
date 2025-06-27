@@ -1,3 +1,9 @@
+cat("\n------ Session info --------\n")
+
+sessioninfo::session_info(info = c("platform", "packages", "python"))
+
+sessioninfo::external_info()
+
 cat("\n------ Debug --------\n")
 
 cat(getwd(), "\n")
