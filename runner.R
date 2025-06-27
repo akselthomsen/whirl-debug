@@ -2,8 +2,22 @@ cat("\n------ Debug --------\n")
 
 cat(getwd(), "\n")
 
+library(whirl)
+
 y <- whirl:::whirl_r_session$new(verbosity_level = "minimal")
 cat(y$get_wd(), "\n")
+
+y$log_script("mtcars.R")
+y$wait()
+y$read()
+
+y$create_log()
+y$wait()$read()
+
+y$log_finish()
+y$create_outputs(out_dir = ".", format = "html")
+
+stopifnot(file.exists("mtcars_log.html"))
 
 cat("\n------ Run() --------\n")
 
