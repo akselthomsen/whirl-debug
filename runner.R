@@ -2,7 +2,7 @@ cat("\n------ Debug --------\n")
 
 cat(getwd(), "\n")
 
-y <- whirl:::whirl_r_session$new()
+y <- whirl:::whirl_r_session$new(verbosity_level = "minimal")
 cat(y$get_wd(), "\n")
 
 cat("\n------ Run() --------\n")
