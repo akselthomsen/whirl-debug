@@ -1,3 +1,11 @@
+cat("\n------ Debug --------\n")
+
+cat(getwd(), "\n")
+
+y <- whirl:::whirl_r_session$new()
+cat(y$get_wd(), "\n")
+
+cat("\n------ Run() --------\n")
 
 x <- whirl::run("mtcars.R")
 
